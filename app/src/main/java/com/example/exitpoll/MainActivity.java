@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.exitpoll.db.DatabaseHelper;
 import com.example.exitpoll.model.VoteItem;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 count+=1;
                 mId=1;
                 updateVote();
+                Toast.makeText(MainActivity.this,"งดออกเสียง",Toast.LENGTH_SHORT).show();
             }
         });
         Button no1 = findViewById(R.id.no1);
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 count+=1;
                 mId=2;
                 updateVote();
-
+                Toast.makeText(MainActivity.this,"เลือกผู้สมัครหมายเลข 1",Toast.LENGTH_SHORT).show();
             }
         });
         Button no2 = findViewById(R.id.no2);
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 count+=1;
                 mId=3;
                 updateVote();
+                Toast.makeText(MainActivity.this,"เลือกผู้สมัครหมายเลข 2",Toast.LENGTH_SHORT).show();
             }
         });
         Button no3 = findViewById(R.id.no3);
@@ -85,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 count+=1;
                 mId=4;
                 updateVote();
+                Toast.makeText(MainActivity.this,"เลือกผู้สมัครหมายเลข 3",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -119,5 +123,11 @@ public class MainActivity extends AppCompatActivity {
             mVoteItemList.add(item);
         }
         c.close();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadPhoneData();
     }
 }

@@ -54,6 +54,7 @@ public class ResultActivity extends AppCompatActivity {
                         cv,
                         COL_ID ,null
                 );
+                loadPhoneData();
                 Intent i =getIntent();
                 finish();
                 startActivity(i);
