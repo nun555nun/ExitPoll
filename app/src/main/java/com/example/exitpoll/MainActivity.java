@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 count+=1;
                 mId=1;
                 updateVote();
-                Toast.makeText(MainActivity.this,"งดออกเสียง",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"งดออกเสียง ",Toast.LENGTH_SHORT).show();
             }
         });
         Button no1 = findViewById(R.id.no1);
